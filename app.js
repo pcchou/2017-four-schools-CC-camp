@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/images', express.static(path.join(__dirname, "assets/images")));
 
 app.use('/', index);
 
