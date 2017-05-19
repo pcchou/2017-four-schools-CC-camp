@@ -10,7 +10,7 @@ router.get('/landing.html',function(req, res, next) {
    res.render('landing', { title: 'Express' });
 });
 router.get('/elements.html', function(req, res, next) {
-   res.render('elements', { title: 'Express',Subject:[
+   res.render('elements', { title: 'Express', Subject: [
       {
          'id': 'html',
          'title': 'HTML+CSS',
