@@ -3409,24 +3409,16 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/background.png");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		padding: 6em 0 2em 0 ;
-		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
-		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
-		position: relative;
-		top: -3.25em;
 	}
 
 		#banner:after {
@@ -3445,13 +3437,24 @@
 			background-color: #242943;
 			content: '';
 			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.85;
+			opacity: 0.25;
 			position: absolute;
+			left: 0;
 			top: 0;
 			width: 100%;
-			z-index: 1;
+			z-index: 0;
+			height: inherit;
+		}
+
+		#banner:before {
+			background-color: black;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: -1;
+			content: '';
 		}
 
 		#banner h1 {
@@ -3513,9 +3516,9 @@
 				}
 
 		#banner.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
+			height: 80vh;
+			margin-top: -10vh;
+			margin-bottom: -10vh;
 		}
 
 			#banner.major.alt {
@@ -3573,12 +3576,7 @@
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 5em 0 1em 0 ;
-				height: auto;
-				margin-bottom: -2.75em;
-				max-height: none;
-				min-height: 0;
-				top: -2.75em;
+
 			}
 
 				#banner h1 {
@@ -3595,9 +3593,7 @@
 					}
 
 				#banner.major {
-					height: auto;
-					min-height: 0;
-					max-height: none;
+					max-height: 100vmin;
 				}
 
 		}
@@ -3605,7 +3601,6 @@
 		@media screen and (max-width: 480px) {
 
 			#banner {
-				padding: 6em 0 2em 0 ;
 			}
 
 				#banner > .inner .content p br {
@@ -3613,7 +3608,6 @@
 				}
 
 				#banner.major {
-					padding: 8em 0 4em 0 ;
 				}
 
 		}
