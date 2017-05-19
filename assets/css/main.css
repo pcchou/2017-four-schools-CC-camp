@@ -3686,10 +3686,31 @@ body.is-loading #banner > .inner {
 	float: right;
 	height: 360px;
 	width: 340px;
+	position: relative;
+	top: -10.5em;
 	margin-right: 2em;
+	margin-bottom: 3em;
 }
+
+#two p {
+	max-width: 50vw;
+	width: calc(80vw - 340px - 5em);
+}
+
 #two .inner {
 	min-height: calc(8em + 360px);
+}
+
+@media screen and (max-width: 736px) {
+	#two iframe {
+		display: block;
+		float: none;
+		top: 0;
+	}
+	#two p {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
 }
 
 @media screen and (max-width: 480px) {
