@@ -21,7 +21,9 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
-
+   *:focus{
+      outline: none;
+   }
 	body {
 		line-height: 1;
 	}
@@ -2525,7 +2527,7 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
-	button,
+	button:not(.swal2-styled):not(.fancybox-button),
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
