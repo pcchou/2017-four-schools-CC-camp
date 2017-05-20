@@ -6,12 +6,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var expressGoogleAnalytics = require('express-google-analytics');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Insert your Google Analytics Id, Shoule be something like 'UA-12345678-9'
+var analytics = expressGoogleAnalytics('UA-56773661-4');
+//Add to express before your routes
+app.use(analytics);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

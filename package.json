@@ -11,6 +11,7 @@
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
     "express": "~4.15.2",
+    "express-google-analytics": "^1.0.2",
     "lightbox2": "^2.9.0",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
