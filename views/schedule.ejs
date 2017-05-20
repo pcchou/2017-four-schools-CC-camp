@@ -46,12 +46,12 @@
 								</tr>
 								<tr>
 									<td>0900~12:00</td>
-									<td>團體遊戲</td>
+									<td>大地遊戲(一)</td>
+									<td><a id='html'>HTML+CSS</a></td>
+									<td><a id='aviutl'>Aviutl</a></td>
 									<td><a id='js'>Javascript</a></td>
-									<td><a id='ai'>3D Logo</a></td>
-									<td><a id='sai'>SAI Sketchup</a></td>
 									<td>大地遊戲(二)</td>
-									<td><a id='cpp'>C/C++</a></td>
+									<td><a id='python'>Python</a></td>
 									<td>成果發表</td>
 								</tr>
 								<tr>
@@ -65,15 +65,19 @@
 									<td>午餐時間</td>
 								</tr>
 								<tr>
-									<td>14:00~17:00</td>
-									<td><a id="html">HTML+CSS</a></td>
-									<td>真人RPG</td>
-									<td>大地遊戲(一)</td>
-									<td><a id='BBS'>BBS</a></td>
-									<td>大地遊戲(二)</td>
-									<td><a id='rpg'>RPG Maker</a></td>
-									<td>神秘晚會(至21:30)</td>
+									<td>14:00~15:00</td>
+									<td><a id="BBS">BBS</a></td>
+                           <td rowspan="2"><a id="cpp">C/C++</a></td>
+									<td rowspan="2">真人RPG</td>
+									<td rowspan="2"><a id='rpg'>RPG Maker</a></td>
+									<td rowspan="2">大地遊戲(二)</td>
+									<td rowspan="2"><a id='ai'>Adobe Illustrator</a></td>
+									<td rowspan="2">神秘晚會(至21:30)</td>
 								</tr>
+                        <tr>
+                           <td>15:00~17:00</td>
+                           <td><a id="ps">Adobe PhotoShop</a></td>
+                        </tr>
 							</tbody>
 						</table>
 					</div>
@@ -100,7 +104,7 @@
 				swal({
 					title: '<%= val.title %>',
 					text: '<%= val.text %>',
-					imageUrl: 'assets/images/<%= val.id %>.jpg'
+					imageUrl: 'assets/images/<%= val.img %>'
 				});
 				$("#header").hide().show(0);
 			});
