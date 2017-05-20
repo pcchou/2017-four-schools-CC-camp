@@ -3696,32 +3696,32 @@ body.is-loading #banner > .inner {
 	padding-left: 0;
 }
 
-#two iframe {
+.two iframe {
 	float: right;
 	height: 360px;
 	width: 340px;
-	position: relative;
-	top: -10.5em;
-	margin-right: 2em;
-	margin-bottom: 3em;
+	position: absolute;
+	top: 2.5em;
+	right: 1em;
 }
 
-#two p {
+.two p {
 	max-width: 50vw;
 	width: calc(80vw - 340px - 5em);
 }
 
-#two .inner {
+.two .inner {
 	min-height: calc(8em + 360px);
+	position: relative;
 }
 
 @media screen and (max-width: 736px) {
-	#two iframe {
+	.two iframe {
 		display: block;
 		float: none;
 		top: 0;
 	}
-	#two p {
+	.two p {
 		width: 100% !important;
 		max-width: 100% !important;
 	}
@@ -3965,6 +3965,10 @@ body.is-menu-visible #menu .inner {
 
 .noline {
 	border: none;
+}
+
+#three .inner {
+	text-align: center;
 }
 
 #three .inner .button {
