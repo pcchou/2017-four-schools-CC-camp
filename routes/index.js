@@ -51,16 +51,16 @@ router.get('/schedule', function(req, res, next) {
 router.get('/gallery', function(req, res, next) {
    var files = [];
    var walker = walk.walk('assets/images/2015', {followLinks: false});
-   walker.on('file', function(root, start, next){
+   walker.on('file', function(root, start, next) {
       files.push(root + '/' + start.name);
       next();
    });
    walker = walk.walk('assets/images/2016', {followLinks: false});
-   walker.on('file', function(root, start, next){
+   walker.on('file', function(root, start, next) {
       files.push(root + '/' + start.name);
       next();
    });
-   walker.on('end', function(){
+   walker.on('end', function() {
       files.sort();
       res.render('gallery', { title: 'Express', ImageFiles: files });
    });
