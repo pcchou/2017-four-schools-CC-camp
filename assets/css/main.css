@@ -3473,6 +3473,7 @@ body.is-loading #header.alt {
 	padding: 0 !important;
 	position: relative;
 	z-index: 2;
+	height: 100%;
 }
 
 #banner > .inner .image {
@@ -3501,6 +3502,12 @@ body.is-loading #header.alt {
 	-ms-align-items: center;
 	align-items: center;
 	margin: 0 0 2em 0;
+}
+
+#banner > .inner h1 {
+	font-family: Consolas, monaco, monospace;
+	position: absolute;
+	bottom: 0.4em; right: 0.6em;
 }
 
 #banner > .inner .content > * {
@@ -3575,16 +3582,21 @@ body.is-loading #banner > .inner {
 		background-attachment: scroll;
 	}
 
+	#banner h1 {
+		font-size: 2em;
+		bottom: 0.5em !important;
+	}
+
 }
 
 @media screen and (max-width: 736px) {
 
 	#banner {
-
 	}
 
 	#banner h1 {
-		font-size: 2em;
+		font-size: 2.2em;
+		bottom: 0.8em !important;
 	}
 
 	#banner > .inner .content {
@@ -3604,7 +3616,10 @@ body.is-loading #banner > .inner {
 
 @media screen and (max-width: 480px) {
 
-	#banner {
+	#banner h1 {
+		font-size: 2em;
+		bottom: 0.4em !important;
+		right: 0.4em !important;
 	}
 
 	#banner > .inner .content p br {
@@ -3940,4 +3955,31 @@ body.is-menu-visible #menu .inner {
 	transform: none;
 	opacity: 1;
 	visibility: visible;
+}
+
+.split {
+	height: 1em;
+	background-repeat: repeat;
+	background-size: contain;
+	background-image: url("/assets/images/pic08.jpg");
+}
+
+.noline {
+	border: none;
+}
+
+#three .inner .button {
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+.realul li {
+	font-size: 1.3em;
+}
+
+.image h1 {
+	position: absolute;
+	font-size: 7em;
+	top: 10%;
+	left: 10%;
 }
