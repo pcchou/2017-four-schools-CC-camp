@@ -2970,6 +2970,10 @@ button:disabled,
 	background-color: #2e3450;
 }
 
+.spotlights > section li {
+	font-size: 1.3em;
+}
+
 .spotlights > section > .image {
 	background-position: center center;
 	background-size: cover;
@@ -3021,7 +3025,6 @@ button:disabled,
 .spotlights > section > .content > .inner {
 	margin: 0 auto;
 	max-width: 100%;
-	width: 65em;
 }
 
 .spotlights > section:nth-child(2n) {
@@ -3069,21 +3072,13 @@ button:disabled,
 		display: block;
 	}
 
-	.spotlights > section > .image {
-		width: 100%;
+	.spotlights section .image h1 {
+		display: none;
 	}
 
 	.spotlights > section > .content {
 		padding: 4em 3em 2em 3em ;
 		width: 100%;
-	}
-
-}
-
-@media screen and (max-width: 736px) {
-
-	.spotlights > section > .content {
-		padding: 3em 1.5em 1em 1.5em ;
 	}
 
 }
@@ -3973,13 +3968,13 @@ body.is-menu-visible #menu .inner {
 	margin-bottom: 1em;
 }
 
-.realul li {
-	font-size: 1.3em;
+.image {
+	min-width: 30vw;
 }
 
 .image h1 {
+	font-size: 7vw !important;
 	position: absolute;
-	font-size: 7em;
-	top: 10%;
-	left: 10%;
+	top: 12.5%;
+	left: 12.5%;
 }
