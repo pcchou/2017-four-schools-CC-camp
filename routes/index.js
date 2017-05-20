@@ -3,18 +3,18 @@ var router = express.Router();
 var walk = require('walk');
 
 /* GET home page. */
-router.get(['/','/index.html'], function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get('/landing.html',function(req, res, next) {
-   res.render('landing', { title: 'Express' });
+router.get('/guide',function(req, res, next) {
+   res.render('guide', { title: 'Express' });
 });
-router.get('/elements.html', function(req, res, next) {
-   res.render('elements', { title: 'Express', Subject: [
+router.get('/schedule', function(req, res, next) {
+   res.render('schedule', { title: 'Express', Subject: [
       {
          'id': 'html',
          'title': 'HTML+CSS',
-         'text': 'Html是用來寫網頁的程式語言，使用廣泛，且簡單好懂，Css則是幫助你美化你的網頁頁面，使頁面更加人性化與美觀'
+         'text': 'HTML是用來寫網頁的程式語言，使用廣泛，且簡單好懂，CSS則是幫助你美化你的網頁頁面，使頁面更加人性化與美觀'
       },
       {
          'id': 'js',
@@ -48,7 +48,7 @@ router.get('/elements.html', function(req, res, next) {
       }
    ]});
 });
-router.get('/generic.html', function(req, res, next) {
+router.get('/gallery', function(req, res, next) {
    var files = [];
    var walker = walk.walk('assets/images/2015', {followLinks: false});
    walker.on('file', function(root, start, next){
@@ -62,7 +62,7 @@ router.get('/generic.html', function(req, res, next) {
    });
    walker.on('end', function(){
       files.sort();
-      res.render('generic', { title: 'Express', ImageFiles: files });
+      res.render('gallery', { title: 'Express', ImageFiles: files });
    });
 });
 
