@@ -3074,7 +3074,7 @@ button:disabled,
 		display: block;
 	}
 
-	.spotlights section .image h1 {
+	.spotlights section .image {
 		display: none;
 	}
 
@@ -3350,6 +3350,10 @@ body.is-loading #header.alt {
 		padding: 0 1em;
 	}
 
+	#header .logo span {
+		display: none;
+	}
+
 	#header nav a {
 		padding: 0 0.5em;
 	}
@@ -3462,7 +3466,7 @@ body.is-loading #header.alt {
 }
 
 #banner h1 {
-	font-size: 3.25em;
+	font-size: 2.75em;
 }
 
 #banner > .inner {
@@ -3507,7 +3511,7 @@ body.is-loading #header.alt {
 #banner > .inner h1 {
 	font-family: Consolas, monaco, monospace;
 	position: absolute;
-	bottom: 0.4em; right: 0.6em;
+	bottom: 1em; right: 1em;
 }
 
 #banner > .inner .content > * {
@@ -3583,8 +3587,7 @@ body.is-loading #banner > .inner {
 	}
 
 	#banner h1 {
-		font-size: 2em;
-		bottom: 0.5em !important;
+		right: 0.25em !important;
 	}
 
 }
@@ -3595,8 +3598,8 @@ body.is-loading #banner > .inner {
 	}
 
 	#banner h1 {
-		font-size: 2.2em;
-		bottom: 0.8em !important;
+		bottom: 1.5em !important;
+		right: 0.25em !important;
 	}
 
 	#banner > .inner .content {
@@ -3618,8 +3621,8 @@ body.is-loading #banner > .inner {
 
 	#banner h1 {
 		font-size: 2em;
-		bottom: 1.2em !important;
-		right: 0.4em !important;
+		bottom: 1.5em !important;
+		right: 0 !important;
 	}
 
 	#banner > .inner .content p br {
@@ -3716,11 +3719,21 @@ body.is-loading #banner > .inner {
 	position: relative;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 960px) {
+	.two .frames {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.two .major br {
+		display: inline !important;
+	}
 	.two iframe {
 		display: block;
 		float: none;
-		top: 0;
+		clear: both;
+		position: static;
+		margin-bottom: 2em;
 	}
 	.two p {
 		width: 100% !important;
