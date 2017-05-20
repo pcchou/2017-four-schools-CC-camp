@@ -3025,6 +3025,7 @@ button:disabled,
 .spotlights > section > .content > .inner {
 	margin: 0 auto;
 	max-width: 100%;
+	width: 50vw;
 }
 
 .spotlights > section:nth-child(2n) {
@@ -3081,6 +3082,9 @@ button:disabled,
 		width: 100%;
 	}
 
+	.spotlights > section > .content > .inner {
+		width: 60vw;
+	}
 }
 
 /* Header */
@@ -3613,7 +3617,7 @@ body.is-loading #banner > .inner {
 
 	#banner h1 {
 		font-size: 2em;
-		bottom: 0.4em !important;
+		bottom: 1.2em !important;
 		right: 0.4em !important;
 	}
 
@@ -3969,7 +3973,8 @@ body.is-menu-visible #menu .inner {
 }
 
 .image {
-	min-width: 30vw;
+	min-width: 36vw;
+	min-height: 36vw;
 }
 
 .image h1 {
@@ -3977,4 +3982,11 @@ body.is-menu-visible #menu .inner {
 	position: absolute;
 	top: 12.5%;
 	left: 12.5%;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -12vmin;
+    visibility: hidden;
 }
