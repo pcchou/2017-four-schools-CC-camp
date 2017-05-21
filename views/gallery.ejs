@@ -24,7 +24,7 @@
 						<% ImageFiles.forEach(function(val, index, arr){ %>
 						<div class="inb">
 							<a href="<%= val %>" data-fancybox="images">
-								<img src="<%= val %>" height="200" width="267" />
+								<img class="lazy" data-original="<%= val %>" height="200" width="267" />
 							</a>
 						</div>
 						<% }); %>
@@ -46,13 +46,21 @@
 			<script src="assets/js/main.js"></script>
 			<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
 			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 			<style>
-.inb{
-	display: inline-block;
-}
-	a[data-fancybox]{
-		border:none;
-	}
+         .inb{
+         	display: inline-block;
+         }
+      	a[data-fancybox]{
+      		border:none;
+      	}
 			</style>
+         <script>
+         $(function(){
+            $("img.lazy").lazyload({
+               effect: 'fadeIn'
+            });
+         });
+         </script>
 	</body>
 </html>
