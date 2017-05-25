@@ -24,10 +24,10 @@ router.get('/schedule', function(req, res, next) {
          'img': 'js.jpg'
       },
       {
-         'id': 'ai',
-         'title': 'Adobe Illustrator',
-         'text': 'Adobe Illustrater，簡稱 AI，是一個能夠畫出許多圖的軟體，也是許多設計師愛用的軟體，我們將會介紹 AI 的許多功能以及工具的使用方法，只要有方法，技巧不好也能輕鬆畫出好插圖!',
-         'img': 'ai.jpg'
+         'id': 'processing',
+         'title': 'Processing',
+         'text': '使用 Processing 寫程式就是比其他語言更有趣，因為它著重在「繪圖」，讓你天馬行空的創意能夠藉由撰寫程式發揮出來，讓每個人都能發揮與生俱來的創造藝術能力。',
+         'img': 'processing.png'
       },
       {
          'id': 'python',
