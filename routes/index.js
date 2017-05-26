@@ -13,15 +13,9 @@ router.get('/schedule', function(req, res, next) {
    res.render('schedule', { title: 'Express', Subject: [
       {
          'id': 'html',
-         'title': 'HTML+CSS',
-         'text': 'HTML是用來寫網頁的程式語言，使用廣泛，且簡單好懂，CSS則是幫助你美化你的網頁頁面，使網頁界面更加人性化與美觀。',
+         'title': '網頁前端設計',
+         'text': 'HTML是用來寫網頁的程式語言，使用廣泛，且簡單好懂，CSS則是幫助你美化你的網頁頁面，使網頁界面更加人性化與美觀，而JS更可以幫助你的網頁增加更多變化',
          'img': 'html.jpg'
-      },
-      {
-         'id': 'js',
-         'title': 'Javascript',
-         'text': 'JavaScript，一種高階程式語言，通過解釋執行，是一門動態型別，物件導向（基於原型）的直譯語言，隨著最新的HTML5和CSS3語言標準的推行它還可用於遊戲、桌面和行動應用程式的開發和在伺服器端網路環境執行，可以說是十分泛用的語言呢！',
-         'img': 'js.jpg'
       },
       {
          'id': 'processing',
