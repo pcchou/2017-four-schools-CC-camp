@@ -4008,3 +4008,42 @@ a.anchor {
     top: -12vmin;
     visibility: hidden;
 }
+
+#reg_form {
+	padding-left: 20%;
+	width: 80%;
+	-moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, -moz-filter 1s ease, -webkit-filter 1s ease;
+	-webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, -webkit-filter 1s ease, -webkit-filter 1s ease;
+	-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, -ms-filter 1s ease, -webkit-filter 1s ease;
+	transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
+	position: relative;
+}
+
+#overlay {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#overlay.show {
+	position: fixed;
+	z-index: 711111111111111111111111111111111122;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+    -webkit-animation: 1s ease fadein;
+    animation: 1s ease fadein;
+	background-color: rgba(36, 41, 67, 1);
+}
+
+@keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0.6; }
+    100% { opacity:0.95; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0.6; }
+    100% { opacity:0.95; }
+}

@@ -36,9 +36,9 @@
 								<ul>
 									<li>報名時間：5/27（六）— &nbsp;6/22（四）</li>
 									<li>名單公佈：6/23（五）</li>
-                           <li>正取繳費：6/24（六）— &nbsp;6/30（五）</li>
-                           <li>備取通知：7/01（六）</li>
-                           <li>備取繳費：7/02（日）— &nbsp;7/08（六）</li>
+									<li>正取繳費：6/24（六）— &nbsp;6/30（五）</li>
+									<li>備取通知：7/01（六）</li>
+									<li>備取繳費：7/02（日）— &nbsp;7/08（六）</li>
 									<li>營隊活動：7/25（二）— &nbsp;7/31（一）<br>
 										全程參與費用為 $2500 元，<br>
 										每日活動以 8:00 AM - 5:00 PM 為主，供應午餐，<br>
@@ -89,10 +89,65 @@
 				<!-- Three -->
 				<section id="three">
 					<div class="inner">
-						<span href="" class="button big">5/27 開放報名</span>
+						<span href="" class="button big" id="reg_button">5/27 開放報名</span>
+						<section id="reg_form" style="display: none;">
+							<form method="post" action="#">
+								<div class="field half first">
+									<label for="full_name">學員姓名</label>
+									<input name="full_name" id="full_name" type="text" required>
+								</div>
+								<div class="field half">
+									<label for="gender">學員性別</label>
+									<select name="gender" id="gender"><option value="男">男</option><option value="女">女</option></select>
+								</div>
+								<div class="field half first">
+									<label for="parent_name">家長姓名</label>
+									<input name="parent_name" id="parent_name" type="text" required>
+								</div>
+								<div class="field half">
+									<label for="phone_number">聯絡電話</label>
+									<input name="phone_number" id="phone_number" type="text" required>
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input name="email" id="email" type="text" required>
+								</div>
+								<div class="field half first">
+									<label for="id_number">身份證字號</label>
+									<input name="id_number" id="id_number" type="text" required>
+								</div>
+								<div class="field half">
+									<label for="birthday">生日（保險用）</label>
+									<input name="birthday" id="birthday" type="text" required>
+								</div>
+								<div class="field half first">
+									<label for="transport">交通方式</label>
+									<input name="transport" id="transport" placeholder="自行前往/家長接送" type="text" required>
+								</div>
+								<div class="field half">
+									<label for="emergency_contact">緊急聯絡人/關係/電話</label>
+									<input name="emergency_contact" id="emergency_contact" type="text" required>
+								</div>
+								<div class="field">
+									<label for="parental_consent">繳交家長同意書（請拍照上傳）</label>
+									<input name="parental_consent" type="file" required>
+								</div>
+								<div class="field">
+									<label for="message">備註</label>
+									<textarea name="message" id="message" rows="6"></textarea>
+								</div>
+								<ul class="actions">
+									<li><input class="special" value="送出" type="submit"></li>
+									<li><input value="清除重填" type="reset"></li>
+								</ul>
+							</form>
+						</section>
 					</div>
 				</section>
 
+				<div id="overlay">
+					<h1></h1>
+				</div>
 			</div>
 			<%- include('footer'); %>
 		</div>

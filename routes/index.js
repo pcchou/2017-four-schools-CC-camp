@@ -1,7 +1,22 @@
 var express = require('express');
 var router = express.Router();
+var multer  = require('multer');
+var { ObjectID } = require('mongodb'); // MongoDB _id
+var config = require('../config.json');
 var walk = require('walk');
+var path = require('path');
 
+var storage = multer.diskStorage({
+	destination: function(req, file, callback) {
+		callback(null, './uploads');
+	},
+	filename: function(req, file, callback) {
+		console.log(file);
+		callback(null, req.body.full_name + '_' + Date.now() + path.extname(file.originalname));
+	}
+})
+
+var upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -76,6 +91,21 @@ router.get('/gallery', function(req, res, next) {
    walker.on('end', function() {
       files.sort();
       res.render('gallery', { title: 'Express', ImageFiles: files });
+   });
+});
+router.put('/register', upload.single('parental_consent'), function(req, res, next) {
+    console.log(req.body);
+    var MongoClient = require('mongodb').MongoClient,
+        assert = require('assert');
+    var url = config.mongodb;
+    var param1 = req.body;
+    MongoClient.connect(url, function(err, db) {
+      db.collection('register').insert(param1, function(err, doc) {
+        if (err)
+          res.status(400).send('Error');
+        else
+          res.send('Success');
+      });
    });
 });
 
