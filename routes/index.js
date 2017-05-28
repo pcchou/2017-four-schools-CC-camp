@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var multer  = require('multer');
 var { ObjectID } = require('mongodb'); // MongoDB _id
-var config = require('../config.json');
 var walk = require('walk');
 var path = require('path');
 
@@ -97,7 +96,7 @@ router.put('/register', upload.single('parental_consent'), function(req, res, ne
     console.log(req.body);
     var MongoClient = require('mongodb').MongoClient,
         assert = require('assert');
-    var url = config.mongodb;
+    var url = "mongodb://localhost:27017/2017-fscc";
     var param1 = req.body;
     MongoClient.connect(url, function(err, db) {
       db.collection('register').insert(param1, function(err, doc) {
