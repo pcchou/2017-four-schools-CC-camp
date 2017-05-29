@@ -109,7 +109,7 @@
 								</div>
 								<div class="field">
 									<label for="email">Email</label>
-									<input name="email" id="email" type="text" required>
+									<input name="email" id="email" type="email" required>
 								</div>
 								<div class="field half first">
 									<label for="id_number">身份證字號</label>
@@ -117,7 +117,7 @@
 								</div>
 								<div class="field half">
 									<label for="birthday">生日（保險用）</label>
-									<input name="birthday" id="birthday" type="text" required>
+                           <input data-toggle="datepicker" name="birthday" id="birthday" type="text" required>
 								</div>
 								<div class="field half first">
 									<label for="transport">交通方式</label>
@@ -128,8 +128,8 @@
 									<input name="emergency_contact" id="emergency_contact" type="text" required>
 								</div>
 								<div class="field">
-									<label for="parental_consent">繳交<a href="/assets/parental_consent.docx">家長同意書</a>（請拍照上傳）</label>
-									<input name="parental_consent" type="file" required>
+									<label for="parental_consent">繳交<a target="_blank" href="/assets/parental_consent.docx">家長同意書</a>（請拍照上傳）</label>
+									<input name="parental_consent" type="file" accept="image/*" required>
 								</div>
 								<div class="field">
 									<label for="message">備註</label>
@@ -157,6 +157,16 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <link rel="stylesheet" href="assets/css/datepicker.css" />
+      <script src="assets/js/datepicker.js"></script>
+      <script src="assets/js/datepicker-CN.js"></script>
+      <script>
+      $('[data-toggle="datepicker"]').datepicker({
+           language: 'zh-CN',
+           'date': '2002/01/01',
+           'endDate': 'now',
+      });
+      </script>
 		<script src="assets/js/main.js"></script>
 
 	</body>
