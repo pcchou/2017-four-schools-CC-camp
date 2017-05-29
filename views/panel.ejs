@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>成楓望建了美景 - 2017 建成楓景聯合電資暑訓</title>
+      <meta charset="utf-8" />
+      <link rel="shortcut icon" type="image/jpeg" href="assets/images/favicon.jpg"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   </head>
+   <body>
+      <blockquote>
+         <p>
+            報名人數：<%= Data.length %>
+            <br>
+            膜拜PCC&lt;(_ _)&gt;
+         </p>
+         <footer>by&nbsp;<cite>系統公告</cite></footer>
+      </blockquote>
+      <div class'table-responsive'>
+         <table class='table table-striped'>
+            <thead>
+               <tr>
+                  <th>學員姓名</th>
+                  <th>性別</th>
+                  <th>家長姓名</th>
+                  <th>連絡電話</th>
+                  <th>Email</th>
+                  <th>身分證字號</th>
+                  <th>生日</th>
+                  <th>交通方式</th>
+                  <th>緊急聯絡</th>
+                  <th>同意書</th>
+                  <th>備註</th>
+               </tr>
+            </thead>
+            <tbody>
+               <% Data.forEach(function(val, index, arr){ %>
+               <tr>
+                  <td><%= val.full_name %></td>
+                  <td><%= val.gender %></td>
+                  <td><%= val.parent_name %></td>
+                  <td><%= val.phone_number %></td>
+                  <td><%= val.email %></td>
+                  <td><%= val.id_number %></td>
+                  <td><%= val.birthday %></td>
+                  <td><%= val.transport %></td>
+                  <td><%= val.emergency_contact %></td>
+                  <td><%= val.parental_consent %></td>
+                  <td><%= val.message %></td>
+               </tr>
+               <% }); %>
+            </tbody>
+         </table>
+         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+         <script src="assets/js/boostrap.min.js"></script>
+   </body>
+</html>

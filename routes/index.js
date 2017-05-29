@@ -4,6 +4,8 @@ var multer  = require('multer');
 var { ObjectID } = require('mongodb'); // MongoDB _id
 var walk = require('walk');
 var path = require('path');
+var basicAuth = require('basic-auth');
+var sha256 = require('sha256');
 
 var storage = multer.diskStorage({
 	destination: function(req, file, callback) {
@@ -107,5 +109,33 @@ router.put('/register', upload.single('parental_consent'), function(req, res, ne
       });
    });
 });
-
+var authorize = function(req, res, next){
+   function unauth(res){
+      res.set("WWW-Authenticate", "Basic realm=\"Authorization Required\"");
+      return res.status('401').send("Authorization Required");
+   }
+   var user = basicAuth(req);
+   if(!user || !user.name || !user.pass){
+      return unauth(res);
+   }
+   if(sha256(sha256(user.name)) === '6c2fa041b7fdff1adafc7d0c7ad4d6ce5643418a545d683bb317f43207e0dd8a' && sha256(sha256(user.pass)) === 'a67f9a9f77fbbd5d273a8a4b22a21302e01f94914a89b3fdb72aad3d532e6cd1'){
+      return next();
+   }else{
+      return unauth(res);
+   }
+};
+router.get('/adminView', authorize , function(req, res, next){
+   var MongoClient = require('mongodb').MongoClient;
+   var mongoLink = "mongodb://localhost:27017/2017-fscc";
+   MongoClient.connect(mongoLink, function(err, db) {
+      db.collection('register').find().toArray(function(err , results){
+         if(err){
+            throw err;
+         }else{
+            res.render("panel", {title: "Express", Data: results});
+            db.close();
+         }
+      });
+   });
+});
 module.exports = router;
