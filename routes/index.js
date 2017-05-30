@@ -8,21 +8,21 @@ var basicAuth = require('basic-auth');
 var sha256 = require('sha256');
 
 var storage = multer.diskStorage({
-	destination: function(req, file, callback) {
-		callback(null, './uploads');
-	},
-	filename: function(req, file, callback) {
-		console.log(file);
-		var name=req.body.full_name+'_'+Date.now()+path.extname(file.originalname);
+   destination: function(req, file, callback) {
+      callback(null, './uploads');
+   },
+   filename: function(req, file, callback) {
+      console.log(file);
+      var name=req.body.full_name+'_'+Date.now()+path.extname(file.originalname);
       req.body.parental_consent = name;
-		callback(null, name);
-	}
+      callback(null, name);
+   }
 })
 
 var upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+   res.render('index', { title: 'Express' });
 });
 router.get('/guide',function(req, res, next) {
    res.render('guide', { title: 'Express' });
@@ -97,19 +97,33 @@ router.get('/gallery', function(req, res, next) {
    });
 });
 router.put('/register', upload.single('parental_consent'), function(req, res, next) {
-    console.log(req.body);
-    var MongoClient = require('mongodb').MongoClient,
-        assert = require('assert');
-    var url = "mongodb://localhost:27017/2017-fscc";
-    var param1 = req.body;
-    MongoClient.connect(url, function(err, db) {
-      db.collection('register').insert(param1, function(err, doc) {
-        if (err)
-          res.status(400).send('Error');
-        else
-          res.send('Success');
+   console.log(req.body);
+   var MongoClient = require('mongodb').MongoClient,
+      assert = require('assert');
+   var url = "mongodb://localhost:27017/2017-fscc";
+   var param1 = req.body;
+   if(!param1.full_name         ||
+      !param1.gender            ||
+      !param1.parent_name       ||
+      !param1.phone_number      ||
+      !param1.email             ||
+      !param1.id_number         ||
+      !param1.birthday          ||
+      !param1.transport         ||
+      !param1.emergency_contact ||
+      !param1.parental_consent  ){
+      console.log(param1);
+      res.status(400).send('Error');
+   }else{
+      MongoClient.connect(url, function(err, db) {
+         db.collection('register').insert(param1, function(err, doc) {
+            if (err)
+               res.status(400).send('Error');
+            else
+               res.send('Success');
+         });
       });
-   });
+   }
 });
 var authorize = function(req, res, next){
    function unauth(res){
