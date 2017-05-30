@@ -1963,6 +1963,7 @@ textarea {
 	padding: 0 1em;
 	text-decoration: none;
 	width: 100%;
+	box-shadow: 0 0 0 2px #fff;
 }
 
 input[type="text"]:invalid,
@@ -1974,7 +1975,7 @@ input[type="url"]:invalid,
 input[type="date"]:invalid,
 select:invalid,
 textarea:invalid {
-	box-shadow: none;
+	box-shadow: 0 0 0 2px #fff;
 }
 
 input[type="text"]:focus,
