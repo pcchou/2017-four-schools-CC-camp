@@ -104,6 +104,7 @@ router.put('/register', upload.single('parental_consent'), function(req, res, ne
    var param1 = req.body;
    if(!param1.full_name         ||
       !param1.gender            ||
+      !param1.clothe_size       ||
       !param1.parent_name       ||
       !param1.phone_number      ||
       !param1.email             ||
@@ -118,7 +119,7 @@ router.put('/register', upload.single('parental_consent'), function(req, res, ne
       MongoClient.connect(url, function(err, db) {
          db.collection('register').insert(param1, function(err, doc) {
             if (err)
-               res.status(400).send('Error');
+               res.status(500).send('Error');
             else
                res.send('Success');
          });
