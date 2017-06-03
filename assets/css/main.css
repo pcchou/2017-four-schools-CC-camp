@@ -1703,7 +1703,7 @@ em, i {
 }
 
 p {
-	margin: 0 0 2em 0;
+	margin: 0 0 1.5em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2964,6 +2964,10 @@ button:disabled,
 	border-top: 0 !important;
 }
 
+.spotlights > section p {
+	margin-bottom: 0.5em;
+}
+
 .spotlights > section {
 	display: -moz-flex;
 	display: -webkit-flex;
@@ -2977,7 +2981,7 @@ button:disabled,
 }
 
 .spotlights > section li {
-	font-size: 1.3em;
+	font-size: 18px;
 }
 
 .spotlights > section > .image {
