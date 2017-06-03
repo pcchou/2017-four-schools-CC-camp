@@ -5,6 +5,7 @@ var logger = require('morgan');
 var multer  = require('multer');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
 
 var index = require('./routes/index');
 var expressGoogleAnalytics = require('express-google-analytics');
@@ -19,6 +20,7 @@ app.set('view engine', 'ejs');
 var analytics = expressGoogleAnalytics('UA-56773661-4');
 //Add to express before your routes
 app.use(analytics);
+app.use(helmet());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
