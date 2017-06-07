@@ -21,6 +21,9 @@ var analytics = expressGoogleAnalytics('UA-56773661-4');
 //Add to express before your routes
 app.use(analytics);
 app.use(helmet());
+app.all(function(req, res, next){
+   console.log("[REQUESTED] "+req.originalUrl);
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
