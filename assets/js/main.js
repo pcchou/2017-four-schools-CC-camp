@@ -381,14 +381,14 @@
 
             $.ajax({
                url:'/register',
-               type:'put',
+               type:'post',
                data: formdata ? formdata : form.serialize(),
                cache: false,
                contentType: false,
                processData: false}).done(function(){
                   $('#reg_form').addClass('is-transitioning');
                   $('#overlay').addClass('show');
-                  $('#overlay h1').html('報名成功！');
+                  $('#overlay').html('<span style="position: absolute;top: 4px;left: 4px;cursor: pointer;" onclick="location.reload()"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</span><h1>報名成功！</h1>');
                   /*window.setTimeout(function() {
                      window.location.href = '/guide';
                    }, 2);*/
