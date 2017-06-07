@@ -21,16 +21,12 @@ var analytics = expressGoogleAnalytics('UA-56773661-4');
 //Add to express before your routes
 app.use(analytics);
 app.use(helmet());
-app.use(function(req, res, next){
-   console.log("[REQUESTED] "+req.originalUrl);
-   return next();
-});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '10mb'}));
+app.use(bodyParser.urlencoded({ extended: false, limit:'10mb' }));
 app.use(cookieParser());
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/images', express.static(path.join(__dirname, 'assets/images')));

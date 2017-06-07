@@ -381,7 +381,7 @@
 
             $.ajax({
                url:'/register',
-               type:'post',
+               type:'put',
                data: formdata ? formdata : form.serialize(),
                cache: false,
                contentType: false,

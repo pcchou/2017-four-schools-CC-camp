@@ -96,7 +96,7 @@ router.get('/gallery', function(req, res, next) {
       res.render('gallery', { title: 'Express', ImageFiles: files });
    });
 });
-router.post('/register', upload.single('parental_consent'), function(req, res, next) {
+router.put('/register', upload.single('parental_consent'), function(req, res, next) {
    console.log(req.body);
    var MongoClient = require('mongodb').MongoClient,
       assert = require('assert');
