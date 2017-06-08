@@ -378,7 +378,8 @@
             if (window.FormData){
                formdata = new FormData(form[0]);
             }
-
+            $("#overlay").addClass('loading');
+            $("#overlay h1").html('<img src="images/loading.svg" href="loading" />');
             $.ajax({
                url:'/register',
                type:'put',
@@ -386,6 +387,7 @@
                cache: false,
                contentType: false,
                processData: false}).done(function(){
+                  $('#overlay').removeClass('loading');
                   $('#reg_form').addClass('is-transitioning');
                   $('#overlay').addClass('show');
                   $('#overlay').html('<span style="position: absolute;top: 4px;left: 4px;cursor: pointer;" onclick="location.reload()"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</span><h1>報名成功！</h1>');
