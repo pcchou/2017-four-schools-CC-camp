@@ -27,6 +27,9 @@ router.get('/', function(req, res, next) {
 router.get('/guide',function(req, res, next) {
    res.render('guide', { title: 'Express' });
 });
+router.get('/qna',function(req, res, next) {
+   res.render('qna', { title: 'Express' });
+});
 router.get('/schedule', function(req, res, next) {
    res.render('schedule', { title: 'Express', Subject: [
       {
